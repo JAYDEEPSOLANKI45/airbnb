@@ -1,0 +1,20 @@
+<% layout("./includes/boilerplate.ejs") %>
+
+<body>
+    <div class="row content">
+        
+    <% for(listing of listings) {%>
+        <div class="card" style="width: 20rem;">
+            <img src="<%=listing.image.url%>" class="card-img-top" alt="listing-image" style="height: 20rem;">
+            <div class="card-body">
+              <h5 class="card-title"><%=listing.title%></h5>
+              <p class="card-text"><%=listing.description%></p>
+              <a href="/listings/<%= listing._id %>" class="btn btn-primary price">Book for <%=listing.price%></a>
+              <% if(currentUser && listing.owner._id.equals(currentUser._id)) { %>
+              <form action="/listings/<%= listing._id  %>?_method=DELETE"  method="post"><button class="btn btn-danger price">Delete</button></form>
+              <% } %>
+            </div>
+          </div>
+          <%}%>
+    </div>
+</body>

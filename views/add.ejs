@@ -1,0 +1,54 @@
+<% layout("/includes/boilerplate.ejs") %>
+<body>
+        <div class="container mt-4">
+            <h1>Add a listing</h1>
+            <form action="/listings" method="post" novalidate class="row g-3 needs-validation" enctype="multipart/form-data">
+                <div class="col-md-6">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" name="title" class="form-control" id="title" placeholder="Enter a title" required>
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">
+                        Please provide a title.
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea name="description" class="form-control" id="description" placeholder="Enter a description" required></textarea>
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">
+                        Please provide a description.
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="image" class="form-label">Image URL</label>
+                    <input type="file" name="image" class="form-control" id="image" placeholder="Enter an image URL">
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+                <div class="col-md-6">
+                    <label for="price" class="form-label">Price</label>
+                    <input type="text" name="price" class="form-control" id="price" placeholder="Enter the price" required>
+                    <div class="invalid-feedback">
+                        Please provide a valid price.
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="location" class="form-label">Location</label>
+                    <input type="text" name="location" class="form-control" id="location" placeholder="Location" required>
+                    <div class="invalid-feedback">
+                        Please provide a valid location.
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="country" class="form-label">Country</label>
+                    <input type="text" name="country" class="form-control" id="country" placeholder="Country" required>
+                    <div class="invalid-feedback">
+                        Please provide a valid country.
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    
+</body>
